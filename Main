@@ -1,0 +1,16 @@
+#include <Arduino.h>
+#include "RobotWall.h"
+
+double targetDistance = 8.0; // Target distance from the wall
+const int threshold_distance = 10; // Jarak minimum yang menunjukkan adanya tembok di depan
+const int turn_speed = 50; // Kecepatan putaran saat melakukan manuver belok
+const int turn_duration = 150; // Durasi putaran (dalam milidetik)
+
+void setup() {
+  Wallsetup();
+  followWall(targetDistance, threshold_distance, turn_speed, turn_duration);
+}
+
+void loop() {
+  Wallloop();
+}
